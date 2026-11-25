@@ -10,6 +10,9 @@ from pathlib import Path
 
 REVIEW = "Gravity works fine until I drop my phone, then it aims straight for the one corner that cracks."
 
+# The gate allows 1-160 characters, one line, not only whitespace.
+assert 1 <= len(REVIEW) <= 160 and "\n" not in REVIEW and REVIEW.strip()
+
 
 def main() -> None:
     out_dir = Path(os.environ["MAKEFUN_OUTPUT_DIR"])
